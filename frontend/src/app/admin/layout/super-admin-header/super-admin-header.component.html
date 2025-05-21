@@ -1,0 +1,92 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">SMART FAQ BOT</a>
+    <div class="d-flex align-items-center">
+      <!-- Settings button shown only for collegeUser -->
+      <ng-container *ngIf="userRole === 'collegeUser'">
+        <div class="settings-actions me-2">
+          <button
+            class="btn btn-outline-secondary settings-icon-button"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#settingsOffcanvasRight"
+            aria-controls="settingsOffcanvasRight"
+          >
+            <i class="bi bi-gear-fill"></i>
+            <span class="visually-hidden">Settings</span>
+          </button>
+        </div>
+      </ng-container>
+
+      <div class="user-actions me-2">
+        <button
+          class="btn btn-outline-secondary user-icon"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#userOffcanvasRight"
+          aria-controls="userOffcanvasRight"
+        >
+          <i class="bi bi-person-circle"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Offcanvas Menu (Now on the Left) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ng-container *ngIf="userRole === 'superAdmin'">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/dashboard']" routerLinkActive="active" data-bs-dismiss="offcanvas">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/users']" routerLinkActive="active" data-bs-dismiss="offcanvas">College Users</a>
+            </li>
+          </ng-container>
+          <ng-container *ngIf="userRole === 'collegeUser'">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/knowledge-management']" routerLinkActive="active" data-bs-dismiss="offcanvas">Knowledge Management</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas for User Profile -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="userOffcanvasRight" aria-labelledby="userOffcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="userOffcanvasRightLabel">Manage Account</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="offcanvas-menu">
+      <li><a [routerLink]="['/admin/core/profile']" routerLinkActive="active" data-bs-dismiss="offcanvas">Profile</a></li>
+      <ng-container *ngIf="userRole === 'collegeUser'">
+        <li><a [routerLink]="['/admin/change-password']" routerLinkActive="active" data-bs-dismiss="offcanvas">Change Password</a></li>
+      </ng-container>
+      <li><button class="btn btn-link" (click)="logout()" data-bs-dismiss="offcanvas">Logout</button></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Offcanvas for Settings shown only for collegeUser -->
+<ng-container *ngIf="userRole === 'collegeUser'">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="settingsOffcanvasRight" aria-labelledby="settingsOffcanvasLeftLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="settingsOffcanvasLeftLabel">Settings</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a class="dropdown-item" href="#" (click)="downloadConfig()" data-bs-dismiss="offcanvas">Download Config Files</a>
+    </div>
+  </div>
+</ng-container>
