@@ -7,7 +7,7 @@ A Knowledge Management Bot that uses **RAG (Retrieval-Augmented Generation)** wi
 **How it works:**
 - User asks a question → System classifies if it's about PDFs or websites
 - Retrieves relevant documents from MongoDB → Sends to Google Gemini for processing
-- Gemini generates factual answer from documents only → Returns HTML-formatted response
+- Gemini generates factual answer from documents only → Returns context aware response
 
 ---
 
