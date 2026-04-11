@@ -132,18 +132,7 @@ response = agent_executor.invoke({"input": user_query})
 3. Agent loads relevant documents from MongoDB
 4. Agent uploads to Gemini API (with caching)
 5. Gemini retrieves answer from documents only
-6. Response returned in HTML format
+6. Fully generated Response is returned 
 
-**Key Point**: LLM ONLY uses documents, never its own knowledge. This ensures accuracy.
 
 ---
-
-## 💡 For Interviews - Key Talking Points
-
-1. **RAG Architecture** - "We use RAG to combine LLMs with factual data, preventing AI hallucinations"
-2. **Security** - "API keys stored in environment variables, never in code"
-3. **Scalability** - "MongoDB + Gemini API handles 100+ concurrent users"
-4. **Smart Classification** - "System automatically chooses PDF or web search based on keywords"
-5. **Cost Optimization** - "Using Gemini 1.5 Flash + response caching keeps costs low"
-6. **Document Caching** - "PDFs/websites cached in MongoDB to avoid re-uploading to Gemini"
-7. **Full Stack** - "Angular frontend + Flask backend + MongoDB + Google AI"
