@@ -34,23 +34,6 @@ A Knowledge Management Bot that uses **RAG (Retrieval-Augmented Generation)** wi
 
 ---
 
-## � Security
-
-✅ **API Keys via Environment Variables** - Never hardcoded  
-✅ **Access Key Authentication** - UUID-based tokens in MongoDB  
-✅ **CORS Protected** - API only accessible from `http://localhost:4200`  
-
-**Why environment variables?**
-```python
-# ✅ CORRECT
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-
-# ❌ WRONG (what you should NOT do)
-GOOGLE_API_KEY = "AIzaSyAv2vEdJGNZadv86nHRJWfjD2Yt_JX_pmM"
-```
-Reason: Never expose secrets in code → They get committed to GitHub → Attackers steal them → Your API is compromised.
-
----
 
 ## 📁 Project Structure
 
