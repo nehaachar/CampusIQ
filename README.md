@@ -136,3 +136,28 @@ response = agent_executor.invoke({"input": user_query})
 
 
 ---
+## Output
+
+**College Admin Page**:
+
+<img width="729" height="562" alt="image" src="https://github.com/user-attachments/assets/52148114-bb0a-42e0-88f8-e76f12351ed6" />
+
+**Super Admin Page**:
+<img width="712" height="562" alt="image" src="https://github.com/user-attachments/assets/5a4ecf3a-929c-4185-8c62-a6f0d01340e9" />
+
+**Upload Website links**:
+<img width="717" height="533" alt="image" src="https://github.com/user-attachments/assets/01bffc07-caf3-4783-b655-798ba69ed62f" />
+
+**Upload pdfs**:
+<img width="717" height="533" alt="image" src="https://github.com/user-attachments/assets/a0bdd924-532f-47a7-bce4-2e4416f4c9ea" />
+
+**Chatbot Response for website links**
+<img width="716" height="565" alt="image" src="https://github.com/user-attachments/assets/494af07b-29ab-4202-822b-70ee6b6853d9" />
+
+**Chatbot response for pdfs**
+<img width="732" height="565" alt="image" src="https://github.com/user-attachments/assets/b1e2d230-1bcd-4908-908d-878ea6f4a48c" />
+
+
+
+
+
